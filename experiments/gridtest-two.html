@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grid Prototype</title>
+  <meta property="og:title" content="RCF.LAB" />
+  <meta name="author" content="Ryan Fleck" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="description" content="Ryan Fleck’s collection of experiments, rants, tutorials, and thought pieces." />
+<meta property="og:description" content="Ryan Fleck’s collection of experiments, rants, tutorials, and thought pieces." />
+<link rel="canonical" href="https://ryanfleck.github.io" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="RCF.LAB" />
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Playfair+Display" rel="stylesheet">
+<style>
+
+
+body {
+  background-color: #CCC;
+  font-family: open, serif;
+  color: #222;
+  font-family: 'Libre Baskerville', serif;
+
+}
+
+h1{
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  text-align: center;
+  padding: 0px;
+  border-bottom: 3px solid #AAA;
+}
+h2{
+  font-family: 'Playfair Display', serif;
+}
+
+.rcf-grid {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  padding: 10px;
+  grid-auto-flow: both;
+  justify-content: center;
+
+
+}
+.card {
+  background-color: #FFF;
+  border-right: 5px solid #AAA;
+  border-bottom: 5px solid #AAA;
+  border-radius: 20px;
+  padding: 19px;
+  width: 400px;
+
+}
+.site-header {
+  text-align: center;
+  text-rendering: optimizeLegibility;
+}
+.site-footer {
+
+
+}
+.card .page-content {
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+</style>
+</head>
+<body>
+  <div class="rcf-grid">
+  <header class="site-header card" role="banner">
+    <h1>RYAN FLECK</h1>
+    <p>Computer Programmer Extrordinaire</p>
+  </header>
+
+<div class="card">
+<p><em>Welcome.</em> I am a third-year Computer Engineering student currently working as a <a href="https://ryanfleck.github.io">Co-Op Analyst-Developer at MNP LLP</a>. This site exists to showcase my experiments, alongside many objective and subjective musings. Browsing this site will reveal many useful tutorials, thought pieces, and articles on topics including <em>Programming</em>, <em>Professional Writing</em>, and <em>Philosophy</em>.</p>
+</div>
+
+
+<div class="card">
+<nav>
+<a href="https://ryanfleck.github.io">Experiments</a>  <a href="https://ryanfleck.github.io">Experiments</a>   <a href="https://ryanfleck.github.io">Experiments</a>   <a href="https://ryanfleck.github.io">Experiments</a>   <a href="https://ryanfleck.github.io">Experiments</a>   <a href="https://ryanfleck.github.io">Experiments</a>
+
+
+</nav>
+</div>
+
+
+
+<main class="page-content card" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
+
+
+  <h1 class="page-heading">Recent Updates</h1><ul class="post-list"><li><span class="post-meta">20180330 0516h</span>
+        <h3>
+          <a class="post-link" href="https://ryanfleck.github.io">
+            Build a Personal Website in an Afternoon
+          </a>
+        </h3><p>If you’ve ever wanted a personal website; a place to showcase your experiments and opinions, away from pre-configured themes and terribly named domain postfixes, <a href="https://ryanfleck.github.io"><em>Github Pages</em></a> may be just the tools for you. The following post will present, in a thoughtful and concise manner, the material needed to get a website up and running at <em>yourname.github.io</em>.</p>
+
+</li><li><span class="post-meta">20180321 1809h</span>
+        <h3>
+          <a class="post-link" href="https://ryanfleck.github.io">
+            Operating Systems for Professional Software Development
+          </a>
+        </h3><p>For most software development, the platform where code is being written is arbitrary; all popular operating systems have support for a common set of languages and development tools. Without common compiler and language support, these platforms would be <em>nonviable</em>; this suggests that all platforms currently in use can run a majority of common development tools. Having said this, some operating systems make it significantly easier to perform the daily tasks of a software developer.</p>
+
+</li><li><span class="post-meta">20180219 0713h</span>
+        <h3>
+          <a class="post-link" href="https://ryanfleck.github.io">
+            Attending UOttaHack 2018
+          </a>
+        </h3><p>This past weekend, I attended uOttawa’s first MLH<sup id="fnref:1"><a href="https://ryanfleck.github.io">1</a></sup> Hackathon. After a long work week, I was prepared to show up and enjoy the event, but not to directly participate or join a team. Skipping the overnighter was, at the beginning of the event, a sad but necessary plan.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><strong>MLH:</strong> <a href="https://ryanfleck.github.io">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+</li><li><span class="post-meta">20171229 0711h</span>
+        <h3>
+          <a class="post-link" href="https://ryanfleck.github.io">
+            VIM For The Just-In-Time Crowd.
+          </a>
+        </h3><p>VIM is the best programming tool, full stop. This short guide will take the average JIT<sup id="fnref:1"><a href="https://ryanfleck.github.io">1</a></sup> student from <em>“why would I use this silly terminal thing”</em> to <strong>“ohmygod where has this amazing tool been all my life?”</strong> in 5 minutes, plus an hour or so of experimentation and adapting to the keybindings.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><strong>JIT:</strong> <em>Just In Time</em>, an idea applied to many fields, applicable here in reference to <em>just in time compiling</em>, where a program is compiled at run time during program execution. <a href="https://ryanfleck.github.io">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+</li><li><span class="post-meta">20171223 0619h</span>
+        <h3>
+          <a class="post-link" href="https://ryanfleck.github.io">
+            Life And How To Live It
+          </a>
+        </h3><p>The following post is a summation of what I’ve learned about living over the past few months. I’ve gone through a minor injury, some major family deaths, career moves… It should be noted that this is a set of personal reflections, not a self improvement post. Who knows, dear reader; you may be able to avoid some of these mistakes I’ve made.</p>
+
+</li></ul>
+
+    <p class="rss-subscribe">subscribe <a href="https://ryanfleck.github.io">via RSS</a></p></div>
+
+
+
+      </div>
+    </main><footer class="site-footer h-card card">
+  <data class="u-url" href="https://ryanfleck.github.io"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">RCF.LAB</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Ryan Fleck</li><li><a class="u-email" href="https://ryanfleck.github.io">ryan.fleck@protonmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://ryanfleck.github.io">rflec028</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Ryan Fleck&#39;s collection of experiments, rants, tutorials, and thought pieces.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+title: RCF.LAB
+author: Ryan Fleck
+email: ryan.fleck@protonmail.com
+description: Technical Blog
+warning: This site uses the Google Analytics platform to track users, but respects adblockers.
+not-warning: This page is not tracked.
+currentyear: "2019"
+footermessage: This site is my personal knowledge store and technical blog. Hopefully it comes in handy.
+
+username: RyanFleck
+repo: ryanfleck.github.io
+branch: master
+
+# Links to homepage and about.
+resume_link: https://github.com/RyanFleck/Projects/raw/master/tex/Resume/RCF_CV_W19.pdf
+
+# social links
+github_username:  ryanfleck
+# rss: rss
+# dribbble_username: jekyll
+# flickr_username: jekyll
+linkedin_username: ryan-c-fleck
+# pinterest_username: jekyll
+# youtube_username: jekyll
+# googleplus_username: +jekyll
+
+# Mastodon instances
+mastodon:
+- username: rflec028
+  instance: mastodon.social
+# - username: jekyll2
+#   instance: example.com
+
+
+show_excerpts: true # set to true to show excerpts on the homepage
+
+# Minima date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+  date_format: "%Y%m%d %H%Mh" #RCF-CUSTO-DTF!
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+header_pages:
+ # - about.md
+ # Experiment tag.
+ - tutorials.md
+ - experiments.md
+ # Discourse tag.
+ - discourse.md
+ # Tutorial tag.
+ - archive.md
+
+# Collections:
+collections:
+
+  manuals:
+    output: true
+    permalink: /:name
+
+  journal:
+    output: true
+    permalink: /private/journal/:year:month:day
+
+  poetry:
+    output: true
+    permalink: /poetry/:year/:name
+
+  classnotes:
+    output: true
+    permalink: /notes/:name
+
+permalink: /:year:month:day/:title
+
+google_analytics: UA-112467225-1
+# Build settings
+markdown: kramdown
+theme: minima
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - [vendor]
+
+kramdown:
+  parse_block_html: true
+  auto_ids: true

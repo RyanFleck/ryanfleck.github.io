@@ -1,0 +1,632 @@
+<html>
+  <head>
+    <title>Light Prototype | RCF</title>
+
+    <!-- Page Setup Metadata -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!-- Page Information: FB/Twitter Metadata -->
+
+    <!-- Color parts of specific Web Browsers -->
+    <meta name="color" content="#EEE">
+    <meta name="theme-color" content="#EEE">
+    <meta name="msapplication-TileColor" content="#EEE">
+    <meta name="msapplication-navbutton-color" content="#EEE">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#EEE">
+
+    <style>
+
+        /* reset.css */
+        html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:0.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace, monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace, monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type="button"],[type="reset"],[type="submit"],button{-webkit-appearance:button}[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:0.35em 0.75em 0.625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+
+        /* RCF */
+        html{
+            color: #222;
+            background: #EEE;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+            max-width: 700px;
+            padding: 5px;
+
+            margin: 0px auto;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            font-size: 16px;
+            line-height: 1.2;
+
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
+            scroll-behavior: smooth;
+        }
+        .sans{
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        /* Footer */
+        #footer{
+            padding: 10px;
+            margin: 50px 0px;
+        }
+        #footer-table{
+            width: 100%;
+            display: table;
+        }
+        #footer-table th{
+            text-align: center !important;
+        }
+
+        /* Text and Headings */
+        p, li, td{
+            font-family: "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+        }
+        h1, h2, h3, h4, h5, h6{
+          margin-top: 2em;
+          margin-bottom: 0;
+        }
+        #page-title{
+            margin: 1.5rem 0 0.1rem 0;
+            font-size: 2.2em;
+        }
+
+        /* Code */
+        .highlighter-rouge{
+            overflow-x: auto;
+        }
+        code{
+          font-size: 0.9rem;
+        }
+        pre{
+          margin: 0.2em 0em 1em 0em;
+        }
+
+        /* Links and Media */
+        img{
+            max-width: 100%;
+        }
+        blockquote{
+            font-style: italic;
+        }
+        th,td{
+            text-align: left !important;
+            padding-right: 0.5em;
+            border: none;
+        }
+        table{
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+            border: none;
+        }
+        #menubar{
+            font-size: 9px;
+            color:#444;
+            border-top: 1px solid #DDD;
+            margin: 0 0 2rem 0;
+        }
+
+        /* Experimental */
+
+        /*
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+            background: #2a2a2a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #666;
+        }
+        */
+
+    </style>
+    <style id="light-theme" media="screen">
+        html{
+            color: #222;
+            background: #EEE;
+        }
+        #menubar{
+            color:#444;
+            border-top: 1px solid #DDD;
+        }
+        #menubar a{
+            color:#444;
+            text-decoration:none;
+        }
+        a{
+            color: #293f87;
+            text-decoration:none;
+        }
+        /* Experimental */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+            background: #DDD;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CCC;
+        }
+        /* Syntax Highlighting : https://github.com/jwarby/jekyll-pygments-themes */
+        .highlight .hll{background-color:#ffffcc}.highlight .c{color:#008800;font-style:italic}.highlight .err{border:1px solid #FF0000}.highlight .k{color:#AA22FF;font-weight:bold}.highlight .o{color:#666666}.highlight .cm{color:#008800;font-style:italic}.highlight .cp{color:#008800}.highlight .c1{color:#008800;font-style:italic}.highlight .cs{color:#008800;font-weight:bold}.highlight .gd{color:#A00000}.highlight .ge{font-style:italic}.highlight .gr{color:#FF0000}.highlight .gh{color:#000080;font-weight:bold}.highlight .gi{color:#00A000}.highlight .go{color:#808080}.highlight .gp{color:#000080;font-weight:bold}.highlight .gs{font-weight:bold}.highlight .gu{color:#800080;font-weight:bold}.highlight .gt{color:#0040D0}.highlight .kc{color:#AA22FF;font-weight:bold}.highlight .kd{color:#AA22FF;font-weight:bold}.highlight .kn{color:#AA22FF;font-weight:bold}.highlight .kp{color:#AA22FF}.highlight .kr{color:#AA22FF;font-weight:bold}.highlight .kt{color:#00BB00;font-weight:bold}.highlight .m{color:#666666}.highlight .s{color:#BB4444}.highlight .na{color:#BB4444}.highlight .nb{color:#AA22FF}.highlight .nc{color:#0000FF}.highlight .no{color:#880000}.highlight .nd{color:#AA22FF}.highlight .ni{color:#999999;font-weight:bold}.highlight .ne{color:#D2413A;font-weight:bold}.highlight .nf{color:#00A000}.highlight .nl{color:#A0A000}.highlight .nn{color:#0000FF;font-weight:bold}.highlight .nt{color:#008000;font-weight:bold}.highlight .nv{color:#B8860B}.highlight .ow{color:#AA22FF;font-weight:bold}.highlight .w{color:#bbbbbb}.highlight .mf{color:#666666}.highlight .mh{color:#666666}.highlight .mi{color:#666666}.highlight .mo{color:#666666}.highlight .sb{color:#BB4444}.highlight .sc{color:#BB4444}.highlight .sd{color:#BB4444;font-style:italic}.highlight .s2{color:#BB4444}.highlight .se{color:#BB6622;font-weight:bold}.highlight .sh{color:#BB4444}.highlight .si{color:#BB6688;font-weight:bold}.highlight .sx{color:#008000}.highlight .sr{color:#BB6688}.highlight .s1{color:#BB4444}.highlight .ss{color:#B8860B}.highlight .bp{color:#AA22FF}.highlight .vc{color:#B8860B}.highlight .vg{color:#B8860B}.highlight .vi{color:#B8860B}.highlight .il{color:#666666}
+    </style>
+    <style id="dark-theme" media="none">
+        html{
+            color: #EEE;
+            background: #222;
+        }
+        #menubar{
+            color:#888;
+            border-top: 1px solid #333;
+        }
+        #menubar a{
+            color:#888;
+            text-decoration:none;
+        }
+        a{
+            color: #a9b8e6;
+            text-decoration:none;
+
+        }
+        /* Experimental */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+            background: #2a2a2a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #666;
+        }
+        /* Syntax Highlighting (Tweaked): https://github.com/jwarby/jekyll-pygments-themes */
+         .highlight .c{color:#999}.highlight .c1{color:#999}.highlight .cm{color:#999}.highlight .cs{color:#999}.highlight .err{color:#960050;background-color:#1e0010}.highlight .k{color:#66d9ef}.highlight .l{color:#ae81ff}.highlight .n{color:#f8f8f2}.highlight .o{color:#f92672}.highlight .p{color:#f8f8f2}.highlight .cp{color:#67d6be}.highlight .ge{font-style:italic}.highlight .gs{font-weight:bold}.highlight .kc{color:#66d9ef}.highlight .kd{color:#66d9ef}.highlight .kn{color:#f92672}.highlight .kp{color:#66d9ef}.highlight .kr{color:#66d9ef}.highlight .kt{color:#66d9ef}.highlight .ld{color:#e6db74}.highlight .m{color:#ae81ff}.highlight .s{color:#e6db74}.highlight .na{color:#a6e22e}.highlight .nb{color:#f8f8f2}.highlight .nc{color:#a6e22e}.highlight .no{color:#66d9ef}.highlight .nd{color:#a6e22e}.highlight .ni{color:#f8f8f2}.highlight .ne{color:#a6e22e}.highlight .nf{color:#a6e22e}.highlight .nl{color:#f8f8f2}.highlight .nn{color:#f8f8f2}.highlight .nx{color:#a6e22e}.highlight .py{color:#f8f8f2}.highlight .nt{color:#f92672}.highlight .nv{color:#f8f8f2}.highlight .ow{color:#f92672}.highlight .w{color:#f8f8f2}.highlight .mf{color:#ae81ff}.highlight .mh{color:#ae81ff}.highlight .mi{color:#ae81ff}.highlight .mo{color:#ae81ff}.highlight .sb{color:#e6db74}.highlight .sc{color:#e6db74}.highlight .sd{color:#e6db74}.highlight .s2{color:#e6db74}.highlight .se{color:#ae81ff}.highlight .sh{color:#e6db74}.highlight .si{color:#e6db74}.highlight .sx{color:#e6db74}.highlight .sr{color:#e6db74}.highlight .s1{color:#e6db74}.highlight .ss{color:#e6db74}.highlight .bp{color:#f8f8f2}.highlight .vc{color:#f8f8f2}.highlight .vg{color:#f8f8f2}.highlight .vi{color:#f8f8f2}.highlight .il{color:#ae81ff}.highlight .gh{color:#CCC}.highlight .gu{color:#75715e}.highlight .gd{color:#f92672}.highlight .gi{color:#a6e22e}
+    </style>
+    <script>
+
+        sessionStorage.SessionName = "RCFLabSessionData";
+        console.log(sessionStorage.getItem('nightmode'));
+        var light = sessionStorage.getItem('nightmode');
+
+        function invert(){
+            if( light == "True" || light == null ){
+                document.getElementById('dark-theme').setAttribute('media','screen');
+                document.getElementById('light-theme').setAttribute('media','disabled');
+                light = "False";
+                sessionStorage.setItem("nightmode","False");
+            }else{
+                document.getElementById('light-theme').setAttribute('media','screen');
+                document.getElementById('dark-theme').setAttribute('media','disabled');
+                light = "True";
+                sessionStorage.setItem("nightmode","True");
+            }
+        }
+
+        if( light == "False" ){
+            document.getElementById('dark-theme').setAttribute('media','screen');
+            document.getElementById('light-theme').setAttribute('media','disabled');
+        }
+
+        console.log("It works");
+    </script>
+  </head>
+  <body>
+    <h1 id="page-title">Light Prototype</h1>
+    <div id="menubar"><p style="margin: 0.2em 0;" class="sans">RCF2019 - <a href="/">Home</a> - <span style="cursor:pointer" onclick="invert()">Invert Page Colors</span></p></div>
+
+<p>"I feel that time is of value," said he; "that is why I hastened here when the police inspector suggested that I should secure your co-operation. I came to Baker Street by the Underground and hurried from there on foot, for the cabs go slowly through this snow. That is why I was so out of breath, for I am a man who takes very little exercise. I feel better now, and I will put the facts before you as shortly and yet as clearly as I can."</p>
+
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">increment_a</span> <span class="p">(</span> <span class="nx">x</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">x</span><span class="o">+</span><span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">increment_d</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span></code></pre></div></div>
+
+<!-- https://litipsum.com/ -->
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span> <span class="nx">prepared</span> <span class="o">==</span> <span class="kc">true</span> <span class="p">){</span>
+  <span class="c1">// Hm, this doesn't work in IE?</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello, JavaScript!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+<h3>Table of Contents</h3>
+<ol id="markdown-toc">
+<li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+<li><a href="#resources" id="markdown-toc-resources">Resources</a></li>
+<li><a href="#es6-javascript" id="markdown-toc-es6-javascript">ES6+ JavaScript</a>    <ol>
+    <li><a href="#console-output" id="markdown-toc-console-output">Console Output</a></li>
+    <li><a href="#primitives" id="markdown-toc-primitives">Primitives</a></li>
+    <li><a href="#algebra" id="markdown-toc-algebra">Algebra</a></li>
+    <li><a href="#getting-properties" id="markdown-toc-getting-properties">Getting Properties</a></li>
+    <li><a href="#calling-built-in-methods" id="markdown-toc-calling-built-in-methods">Calling Built-in Methods</a></li>
+    <li><a href="#libraries" id="markdown-toc-libraries">Libraries</a></li>
+    <li><a href="#variables" id="markdown-toc-variables">Variables</a></li>
+    <li><a href="#c-c-combo-operators" id="markdown-toc-c-c-combo-operators">C-C-Combo Operators</a></li>
+    <li><a href="#control-flow" id="markdown-toc-control-flow">Control Flow</a></li>
+    <li><a href="#writing-functions" id="markdown-toc-writing-functions">Writing Functions</a></li>
+  </ol>
+</li>
+<li><a href="#fat-arrow-notation" id="markdown-toc-fat-arrow-notation">Fat Arrow Notation</a></li>
+<li><a href="#functional-programming-in-javascript" id="markdown-toc-functional-programming-in-javascript">Functional Programming in JavaScript</a>    <ol>
+    <li><a href="#functions-as-arguments" id="markdown-toc-functions-as-arguments">Functions as Arguments</a></li>
+    <li><a href="#map" id="markdown-toc-map">Map</a></li>
+    <li><a href="#reduce" id="markdown-toc-reduce">Reduce</a></li>
+    <li><a href="#filter" id="markdown-toc-filter">Filter</a></li>
+    <li><a href="#some-and-every" id="markdown-toc-some-and-every">Some and Every</a></li>
+    <li><a href="#functional-programming-in-es6" id="markdown-toc-functional-programming-in-es6">Functional Programming in ES6</a></li>
+  </ol>
+</li>
+<li><a href="#linters" id="markdown-toc-linters">Linters</a></li>
+<li><a href="#asynchrony" id="markdown-toc-asynchrony">Asynchrony</a>    <ol>
+    <li><a href="#promises" id="markdown-toc-promises">Promises</a></li>
+    <li><a href="#callbacks" id="markdown-toc-callbacks">Callbacks</a></li>
+    <li><a href="#asyncawait" id="markdown-toc-asyncawait">Async/Await</a></li>
+  </ol>
+</li>
+<li><a href="#threejs" id="markdown-toc-threejs">Three.js</a></li>
+<li><a href="#web-apps-using-express-and-socketio" id="markdown-toc-web-apps-using-express-and-socketio">Web Apps using Express and Socket.IO</a>    <ol>
+    <li><a href="#express" id="markdown-toc-express">Express</a></li>
+    <li><a href="#socketio" id="markdown-toc-socketio">Socket.IO</a></li>
+  </ol>
+</li>
+<li><a href="#reactjs-library" id="markdown-toc-reactjs-library">ReactJS Library</a></li>
+<li><a href="#react-native" id="markdown-toc-react-native">React Native</a></li>
+<li><a href="#jquery" id="markdown-toc-jquery">JQuery</a>    <ol>
+    <li><a href="#owl-carousel" id="markdown-toc-owl-carousel">OWL Carousel</a></li>
+  </ol>
+</li>
+<li><a href="#nodejs-and-mongodb" id="markdown-toc-nodejs-and-mongodb">NodeJS and MongoDB</a></li>
+<li><a href="#webpack" id="markdown-toc-webpack">WebPack</a></li>
+<li><a href="#babel" id="markdown-toc-babel">Babel</a></li>
+<li><a href="#alternative-modes" id="markdown-toc-alternative-modes">Alternative Modes</a>    <ol>
+    <li><a href="#elm" id="markdown-toc-elm">Elm</a></li>
+    <li><a href="#typescript" id="markdown-toc-typescript">TypeScript</a></li>
+    <li><a href="#scalajs" id="markdown-toc-scalajs">ScalaJS</a></li>
+  </ol>
+</li>
+<li><a href="#get--pull--pulk-revolving-doors-" id="markdown-toc-get--pull--pulk-revolving-doors-">GET ( Pull / Pulk Revolving Doors )</a></li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>When I first began writing JavaScript, I mused: <em>“Ah, JavaScript; I’ve had mixed feelings about it for years now. My negative feelings, for the most part, were resentment for what the modern web has become and the unnecessary strain on modern devices that is heavy website javascript. I generally feel that javascript should only be used for a small subset of things, and always trivial; using javascript for anything mission-critical or important is dangerous. I imagine that this is not entirely fair, so I’ve set out to learn the basics, then some, in order to become competent in what is currently a very popular language.</em>” In a coin flip between <em>Ruby</em> and <em>JavaScript</em>, I chose to go with JavaScript knowing that the barrier to others viewing my neat experiments is much lower if the experiments could be viewed easily online.</p>
+
+<p>Since that time, I’ve written a great deal of <em>things</em> in JavaScript, ranging from NodeJS servers, to games, to command line applications. It’s a very versatile language with an active developer community and, while not especially scalable, is a fantastic way to wade into computer programming. After becoming familiar with vanilla ES5 and ES6+ (aka pre and post-2015 JS, browser support is still standardized at ES5,) it is possible to wade into all sorts of alternative modes of working and thinking; you can attain better scalability and safety with TypeScript, build functional web applications with Elm, or spend time learning the immensely popular React to build Progressive Web Apps. More than anything else, remember that it is very easy to become overwhelmed; as developers, JavaScript has us spoiled for choice. There are a nearly infinite number of frameworks and working modes to learn, so if you are beginning, focus on the basics first: writing your own vanilla JavaScript, interacting with the <em>Document Object Model</em>, and using the built-in functions. <em>Enjoy!</em></p>
+
+<blockquote>
+<p>Because JavaScript borrows concepts and syntax idioms from several languages, including proud C-style procedural roots as well as subtle, less obvious Scheme/Lisp-style functional roots, it is exceedingly approachable to a broad audience of developers, even those with just little to no programming experience. The “Hello World” of JavaScript is so simple that the language is inviting and easy to get comfortable with in early exposure. …Therein lies the paradox of JavaScript, the Achilles’ Heel of the language, the challenge we are presently addressing. <strong>Because JavaScript can be used without understanding, the understanding of the language is often never attained.</strong> (<a href="https://github.com/getify/You-Dont-Know-JS/blob/master/preface.md">Kyle</a>)</p>
+</blockquote>
+
+<blockquote>
+<p>JavaScript: If it can be done in another language, it should be done in another language. (<a href="http://fuelyourcoding.com/">Doug</a>)</p>
+</blockquote>
+
+<blockquote>
+<p>There are those who will say <em>terrible</em> things about the JavaScript language. Many of these things are true. (Eloquent JS, p.6)</p>
+</blockquote>
+
+<h2 id="resources">Resources</h2>
+
+<ol>
+<li><a href="https://eloquentjavascript.net/">Eloquent JavaScript</a> by Marijn Haverbeke.</li>
+<li><a href="https://github.com/mjavascript/mastering-modular-javascript/tree/master/chapters">Mastering Modular JavaScript (ES6)</a></li>
+<li><a href="https://github.com/getify/You-Dont-Know-JS">You Don’t Know JS, Kyle Simpson </a></li>
+<li>CodeCademy <a href="https://www.codecademy.com/courses/learn-javascript-functions">Learn Javascript.</a></li>
+</ol>
+
+<h2 id="es6-javascript">ES6+ JavaScript</h2>
+
+<p><em>JavaScript</em> is the programming language of the web and beyond, with many popular frameworks for building user interfaces and web apps. JavaScript was originally included within <em>Netscape Navigator</em> in 1995 to add programs to webpages. I attempt to include a smattering of basics below; <code class="highlighter-rouge">//&gt;</code> indicates output printed to the console, and in general, comments are inserted with <code class="highlighter-rouge">//</code> or <code class="highlighter-rouge">/* xyz */</code> for longer multi-line notes.</p>
+
+<p>Before we continue, I should clarify: <strong>Node.JS</strong> is a <em>server-side</em> implementation of Google’s V8 JavaScript engine. What this means for you, as a developer, is that you can write clever programs for the client (the user, plugging along in a browser,) and the server (handling client connections, processing and returning data) in one language. Nearly all of the code mentioned below will work on both the client and server.</p>
+
+<h3 id="console-output">Console Output</h3>
+<p>Useful for debugging and developer interaction, spitting data and text onto the command line is a great way to know if your script is actually functioning, or failed silently.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello, World!"</span><span class="p">);</span>
+<span class="c1">//&gt; Hello, World!</span>
+</code></pre></div></div>
+
+<h3 id="primitives">Primitives</h3>
+<p><em>Primitive Data Types</em> include <em>strings, numbers, booleans, null</em> and <em>undefined</em>. <strong>Strings</strong> can be surrounded by single or double quotes. <strong>Numbers</strong> can be integers or floating point numbers. <strong>Booleans</strong> in JavaScript are <code class="highlighter-rouge">true</code> and <code class="highlighter-rouge">false</code>, and are explicitly lower-case. <strong>Null</strong> represents an empty value.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">aString</span> <span class="o">=</span> <span class="s1">'Javascript'</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">aNumber</span> <span class="o">=</span> <span class="mf">33.7</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">aBoolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">aNullValue</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">anEmptyVariable</span><span class="p">;</span> <span class="c1">//Returns 'undefined'</span>
+</code></pre></div></div>
+
+<h3 id="algebra">Algebra</h3>
+<p>Basic mathematical operators are <code class="highlighter-rouge">+ - * / %</code>.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//Brackets</span>
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">//Division</span>
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">//Multiplication</span>
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">//Addition</span>
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">-</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">//Subtraction</span>
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">%</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">//Modulus</span>
+</code></pre></div></div>
+
+<h3 id="getting-properties">Getting Properties</h3>
+<p>To get more information about a data instance, the <em>properties</em> of the object can be printed. For instance, <em>strings</em> have a <em>length</em> property.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Wow, a string!"</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="c1">//&gt; 14</span>
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="s2">"Wow!"</span>
+<span class="c1">//NOTE: Two ways to do string insertions:</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="s1">' is '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="s1">' characters in length.'</span><span class="p">);</span>
+<span class="c1">//&gt; Wow! is 4 characters in length.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">x</span><span class="p">}</span><span class="s2"> is  </span><span class="p">${</span><span class="nx">x</span><span class="p">.</span><span class="nx">length</span><span class="p">}</span><span class="s2"> characters in length.`</span><span class="p">);</span>
+<span class="c1">//&gt; Wow! is 4 characters in length.</span>
+</code></pre></div></div>
+
+<h3 id="calling-built-in-methods">Calling Built-in Methods</h3>
+<p>Basic data instences in JavaScript inherit the methods of their <em>prototype</em>. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/prototype">Mozilla’s site documents these well. Here are the <em>string</em> prototype builtin methods.</a></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'  RCF-lab  '</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span> <span class="c1">//&gt;     RCF-LAB</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'  RCF-lab  '</span><span class="p">.</span><span class="nx">trim</span><span class="p">());</span> <span class="c1">//&gt; RCF-lab</span>
+</code></pre></div></div>
+
+<h3 id="libraries">Libraries</h3>
+<p>Libraries contain methods that you can call without creating any instances.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Number</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="mi">2017</span><span class="p">));</span>
+<span class="c1">//&gt; true</span>
+</code></pre></div></div>
+
+<h3 id="variables">Variables</h3>
+<p>Variables can be declared in JavaScript with <em>let</em> and <em>const</em>. <em>Constant</em> variables cannot be re-assigned, and will throw a <em>TypeError</em> if attempted. JavaScript conventions are similar to <em>Java</em>: variables begin lowercase, with each additional word capitalized. Variables are assigned with the <code class="highlighter-rouge">=</code> operator. If no data is assigned, the variable will store the value <em>undefined</em>. <strong>Don’t use ‘var’ in ES6.</strong></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">seaLevelAtSeaLevel</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//Cannot be changed.</span>
+<span class="kd">let</span> <span class="nx">height</span> <span class="o">=</span> <span class="mi">182</span><span class="p">;</span> <span class="c1">//Modifiable.</span>
+<span class="kd">let</span> <span class="nx">emptyVar</span><span class="p">;</span> <span class="c1">//Undefined.</span>
+</code></pre></div></div>
+
+<h3 id="c-c-combo-operators">C-C-Combo Operators</h3>
+<p>To prevent users fom writing <code class="highlighter-rouge">variable = variable + 2;</code>, JavaScript has the following built-in <em>assignment operators</em>: add <code class="highlighter-rouge">+=</code>, subtract <code class="highlighter-rouge">-=</code>, multiply <code class="highlighter-rouge">*=</code>, increment <code class="highlighter-rouge">++</code>, and decrement <code class="highlighter-rouge">--</code>.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span> <span class="o">*=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">//Multiplies x by 3.</span>
+<span class="nx">x</span><span class="o">++</span><span class="p">;</span> <span class="c1">//Increments x.</span>
+</code></pre></div></div>
+
+<h3 id="control-flow">Control Flow</h3>
+<p><em>Control flow</em> allows a program to selectively execute code, dependant on a boolean evaluation. The following can evaluate as false, and everything else is true: empty strings <code class="highlighter-rouge">""</code> and <code class="highlighter-rouge">''</code>, <code class="highlighter-rouge">0</code> and <code class="highlighter-rouge">-0</code>, <code class="highlighter-rouge">null</code>, <code class="highlighter-rouge">undefined</code>, not a number <code class="highlighter-rouge">NaN</code>, and <code class="highlighter-rouge">false</code>. Comparative operators <code class="highlighter-rouge">&gt;</code>, <code class="highlighter-rouge">&lt;</code>, <code class="highlighter-rouge">&gt;=</code>, <code class="highlighter-rouge">&lt;=</code>, <code class="highlighter-rouge">==</code>, <code class="highlighter-rouge">!=</code>, <code class="highlighter-rouge">!</code> (prepended <em>not</em>) and <code class="highlighter-rouge">===</code> (equal value and type) can be used here. Boolean statements can be combined using <em>and</em> <code class="highlighter-rouge">&amp;&amp;</code> or <em>or</em> <code class="highlighter-rouge">||</code>.</p>
+
+<p><strong>IF/ELSE</strong> can be used to check basic boolean logic.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span> <span class="nx">value</span> <span class="o">==</span> <span class="s2">"key"</span> <span class="p">)</span> <span class="p">{</span>
+<span class="c1">//Evaluate if boolean is true, value equals the string "key".</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="nx">value</span> <span class="o">==</span> <span class="s2">"lock"</span> <span class="p">)</span> <span class="p">{</span>
+<span class="c1">//Evaluate if value equals "lock"</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="c1">//Evaluate if boolean is false. Value is something else.</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>SWITCH</strong> should be used if there are many different conditions.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span> <span class="p">(</span><span class="nx">string</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">())</span> <span class="p">{</span>
+<span class="k">case</span> <span class="s1">'aardvark'</span><span class="p">:</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"An Aardvark appeared!"</span><span class="p">);</span>
+  <span class="k">break</span><span class="p">;</span>
+<span class="k">case</span> <span class="s1">'bat'</span><span class="p">:</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"A bat appeared!"</span><span class="p">);</span>
+  <span class="k">break</span><span class="p">;</span>
+<span class="k">case</span> <span class="s1">'canteloupe'</span><span class="p">:</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"A Canteloupe appeared!"</span><span class="p">);</span>
+  <span class="k">break</span><span class="p">;</span>
+<span class="nl">default</span><span class="p">:</span>  <span class="c1">//AKA else. Runs if no cases are met.</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Object not recognized."</span><span class="p">);</span>
+  <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>TERNARY OP</strong> is a condensed if/else.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">value</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="p">?</span> <span class="nx">runIfTrue</span><span class="p">(</span><span class="s2">"Hooray!"</span><span class="p">)</span> <span class="p">:</span> <span class="nx">runIfFalse</span><span class="p">(</span><span class="s2">"Goodbye."</span><span class="p">);</span>
+<span class="c1">//Is the condensed version of the if/else statement below:</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">runIfTrue</span><span class="p">(</span><span class="s2">"Hooray!"</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="nx">runIfFalse</span><span class="p">(</span><span class="s2">"Goodbye."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>FOR</strong> can iterate through lists of items and objects.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Entry </span><span class="p">${</span><span class="nx">x</span><span class="p">}</span><span class="s2"> contains </span><span class="p">${</span><span class="nx">list</span><span class="p">[</span><span class="nx">x</span><span class="p">]}</span><span class="s2">.`</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>WHILE</strong> runs until the boolean condition is false.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;=</span> <span class="mi">9000</span><span class="p">)</span> <span class="p">{</span> <span class="nx">x</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"X is over 9000!"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="writing-functions">Writing Functions</h3>
+<p>A variable can store a function by setting it equal to <code class="highlighter-rouge">() =&gt; { ... }</code>.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">warning</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Look out!"</span><span class="p">);}</span>
+<span class="nx">warning</span><span class="p">();</span>
+<span class="c1">//&gt; Look out!</span>
+</code></pre></div></div>
+<p>Parameters for the function can be placed in the brackets. <code class="highlighter-rouge">(input) =&gt; { ... }</code> Many parameters can be specified when separated by commas.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">addFour</span> <span class="o">=</span> <span class="p">(</span><span class="nx">input</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="k">return</span> <span class="nx">input</span> <span class="o">+</span> <span class="mi">4</span> <span class="p">;}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">addFour</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="c1">//&gt; 9</span>
+</code></pre></div></div>
+<p>Functions can also be more permanently <em>declared</em>:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">name</span> <span class="p">(</span><span class="nx">prams</span><span class="p">)</span> <span class="p">{</span>  <span class="nx">code</span>  <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="fat-arrow-notation">Fat Arrow Notation</h2>
+<p><em>“Fat Arrow Notation”</em> is simply a way of expressing functions more simply in JavaScript ES6. The rules are quite simple, and knowing how to read arrow functions can dramatically simplify your programs. This is what a normal function looks like expressed as a verbose function, and simpler fat arrow functions:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Verbose function syntax:</span>
+<span class="kd">function</span> <span class="nx">increment_a</span> <span class="p">(</span> <span class="nx">x</span> <span class="p">)</span> <span class="p">{</span>
+<span class="k">return</span> <span class="nx">x</span><span class="o">+</span><span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1">// Store a verbose function as a const:</span>
+<span class="kd">const</span> <span class="nx">increment_b</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span> <span class="nx">x</span> <span class="p">)</span> <span class="p">{</span>
+<span class="k">return</span> <span class="nx">x</span><span class="o">+</span><span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1">// Fat arrow complex:</span>
+<span class="kd">const</span> <span class="nx">increment_c</span> <span class="o">=</span> <span class="p">(</span> <span class="nx">x</span> <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1">// Fat arrow simple:</span>
+<span class="kd">const</span> <span class="nx">increment_d</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1">// All of these can be called in an identical manner: increment_*( x )</span>
+</code></pre></div></div>
+
+<p>Herein lies the power of simplified functions: it makes it far simpler to pass functions as arguments, as <code class="highlighter-rouge">x =&gt; x+1</code> could be used in many ways.</p>
+
+<p><strong>Note:</strong> below this point, different function notation will be used where it is relevant. Creating a <code class="highlighter-rouge">function</code> is best suited to call-anywhere, large functions, whereas arrow functions are best used embedded or for small stateless operations.</p>
+
+<h2 id="functional-programming-in-javascript">Functional Programming in JavaScript</h2>
+
+<p>Currently, the richest library of functional-programming methods is <strong>LoDash</strong>. Using ES6 arrow functions to clearly pass functions as arguments, and functional paradigms, it is possible to write very functional code in JS.</p>
+
+<p>The latest version of Javascript now has builtin map, reduce, filter, and other functional methods. LoDash is not strictly required.</p>
+
+<p>To begin, import LoDash:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">_</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'lodash'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="functions-as-arguments">Functions as Arguments</h3>
+
+<p>Functions can be manipulated in JS through a variety of means, though not all are recommended and some reduce readability. The most useful way to utilize functions stored as variables is to pass them as arguments. Two important things to know before proceeding:</p>
+<ol>
+<li>Adding <code class="highlighter-rouge">()</code> to a function transforms it into it’s return value.</li>
+<li>Use <code class="highlighter-rouge">const</code> to avoid state change/ mutable data.</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Simple function that simply runs another function:</span>
+<span class="kd">const</span> <span class="nx">runfunction</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">func</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">return</span> <span class="nx">func</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="map">Map</h3>
+<p>Applies an operation to every item in an array.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+
+<h3 id="reduce">Reduce</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+
+<h3 id="filter">Filter</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+
+<h3 id="some-and-every">Some and Every</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+
+<h3 id="functional-programming-in-es6">Functional Programming in ES6</h3>
+
+<p>Many of the functions present in LoDash have been implemented in the core library of ES6, meaning you usually won’t have to import LoDash. Map, reduce and filter all have solid implementations now.</p>
+
+<h2 id="linters">Linters</h2>
+<p>I enjoy using the <em>Standard</em> linter because of its popularity. Running <code class="highlighter-rouge">standard --fix *.js</code> cleans the JS I write up nicely, and I’ve never had problems with execution afterwards. <code class="highlighter-rouge">--fix</code> does assume you are writing ES6 primarily for NodeJS, and transpiling if you need it to run in a browser.</p>
+
+<h2 id="asynchrony">Asynchrony</h2>
+
+<p><strong>Resources:</strong></p>
+<ol>
+<li><a href="https://blog.ometer.com/2011/07/24/callbacks-synchronous-and-asynchronous/">Essay on Callbacks</a></li>
+<li><a href="https://javascript.info/async-await">Async/Await Tutorial</a></li>
+<li><a href="https://medium.com/@bluepnume/learn-about-promises-before-you-start-using-async-await-eb148164a9c8">Learn Promises Before Async/Await</a></li>
+<li><a href="https://medium.com/@ian.mundy/async-map-in-javascript-b19439f0099">Async Map in JavaScript</a></li>
+</ol>
+
+<h3 id="promises">Promises</h3>
+
+<h3 id="callbacks">Callbacks</h3>
+
+<h3 id="asyncawait">Async/Await</h3>
+
+<h2 id="threejs">Three.js</h2>
+
+<p><strong>Resources:</strong></p>
+<ol>
+<li><a href="https://tympanus.net/codrops/2016/04/26/the-aviator-animating-basic-3d-scene-threejs/">Running game and production walkthrough.</a></li>
+<li><a href="https://www.giacomodebidda.com/threejs-project-starter-for-es6-and-webpack2/">ES6/Webpack/ThreeJS starter kit.</a></li>
+<li>Gyro controls <a href="https://gist.github.com/bellbind/d2be9cc09bf6241f255d">A</a> <a href="https://www.learnthreejs.com/device-orientation-gyroscope-controls-tutorial/">B</a></li>
+</ol>
+
+<h2 id="web-apps-using-express-and-socketio">Web Apps using Express and Socket.IO</h2>
+
+<p>Research completed when building <a href="https://github.com/RyanFleck/SocketIOTriviaApp">Socket-IO-Trivia-App</a>.</p>
+
+<p><strong>Express</strong> is a web application framework.</p>
+
+<p><strong>Socket.IO</strong> is an event-based communication framework.</p>
+
+<p>Combined, these two Node libraries enable the expedited construction of fantastic web applications.</p>
+
+<h3 id="express">Express</h3>
+
+<p>With NPM installed, Express installation is as simple as <code class="highlighter-rouge">npm i express</code>. It can be used to assemble game backends, APIs, serve full <em>progressive web applications</em>, and more.</p>
+
+<p>Using the <code class="highlighter-rouge">express-generator</code> package is fantastic. It enables the quick creation of a project with the CSS compiler and templating engine of your choice. Read more here: <a href="https://expressjs.com/en/starter/generator.html">express-generator</a>. My default is <code class="highlighter-rouge">express --pug --css sass</code>.</p>
+
+<h3 id="socketio">Socket.IO</h3>
+
+<p>First, take a quick walk through the simple and effective <a href="https://socket.io/get-started/chat/">tutorial</a> on the Socket.IO homepage.</p>
+
+<h2 id="reactjs-library">ReactJS Library</h2>
+
+<p>Before jumping into react, read <a href="https://dev.to/winduptoy/a-javascript-free-frontend-2d3e">this</a> and consider using a lightweight webapp framework like <a href="https://mithril.js.org/">Mithril</a>.</p>
+
+<p>ReactJS is a Javascript library for building web user interfaces. To learn the basics, I read the tutorial on <a href="https://reactjs.org/tutorial/tutorial.html">reactjs.org</a>.</p>
+
+<h2 id="react-native">React Native</h2>
+
+<p>Allows users to build compile-to-native mobile apps in javascript.</p>
+
+<h2 id="jquery">JQuery</h2>
+<h3 id="owl-carousel">OWL Carousel</h3>
+
+<h2 id="nodejs-and-mongodb">NodeJS and MongoDB</h2>
+<p>After installing MongoDB and loading <a href="http://media.mongodb.org/zips.json">Mongo sample ZIP</a> into the database, (or another from <a href="https://github.com/ozlerhakan/mongodb-json-files">this repo</a>,)</p>
+
+<h2 id="webpack">WebPack</h2>
+<p>Nothing yet.</p>
+
+<h2 id="babel">Babel</h2>
+<p>Babel, an ES6 to ES5 compiler (termed <em>transpiler</em> by some,) is a tool for ensuring modern JavaScript code does not confuse older browsers by converting modern (Post-2015) JavaScript to a backwards-compatible version.</p>
+
+<p>For context, I feel I should include the ESV bible verse after which the project is named. The <em>Babel Fish</em>, a creature from <em>Hitchhiker’s Guide to the Galaxy</em> that performs instant translations, also derives its name from this text.</p>
+
+<p><strong>Genesis 11:1-9 English Standard Version (ESV)</strong></p>
+<blockquote>
+<p>Now the whole earth had one language and the same words. And as people migrated from the east, they found a plain in the land of Shinar and settled there. And they said to one another, “Come, let us make bricks, and burn them thoroughly.” And they had brick for stone, and bitumen for mortar. Then they said, “Come, let us build ourselves a city and a tower with its top in the heavens, and let us make a name for ourselves, lest we be dispersed over the face of the whole earth.” And the Lord came down to see the city and the tower, which the children of man had built. And the Lord said, “Behold, they are one people, and they have all one language, and this is only the beginning of what they will do. And nothing that they propose to do will now be impossible for them. Come, let us go down and there confuse their language, so that they may not understand one another’s speech.” So the Lord dispersed them from there over the face of all the earth, and they left off building the city. Therefore its name was called Babel, because there the Lord confused the language of all the earth. And from there the Lord dispersed them over the face of all the earth.</p>
+</blockquote>
+
+<h2 id="alternative-modes">Alternative Modes</h2>
+
+<p>Various languages enable developers to work in a higher-productivity environment and output vanilla javascript for their web applictions. <em>TypeScript</em> provides many of the comforts of <a href="/cs">C#</a> for JavaScript developers, and <em>Elm</em> is a functional language for creating sites and web apps.</p>
+
+<h3 id="elm">Elm</h3>
+
+<p><em>ToDo.</em></p>
+
+<p>See the <a href="https://guide.elm-lang.org/">Elm docs.</a></p>
+
+<h3 id="typescript">TypeScript</h3>
+
+<p><em>ToDo.</em></p>
+
+<p>See <a href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html">TypeScript in 5 minutes.</a></p>
+
+<h3 id="scalajs">ScalaJS</h3>
+
+<p>See <a href="/scala">Scala Manual</a>.</p>
+
+
+<div id="footer">
+    <table id="footer-table">
+    <tr>
+    <th>Prev</th>
+    <th>Home</th>
+    <th>Next</th>
+    </tr>
+    </table>
+</div>
+
+  </body>
+</html>

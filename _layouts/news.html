@@ -1,0 +1,59 @@
+---
+layout: news_default
+---
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+
+<div class="card title">
+  <h1>Ryan Fleck</h1>
+</div>
+
+<div class="card infoleft">
+<p>Perpetual Edition 35¢</p>
+<p>Published {{ 'now' | date: date_format }}</p>
+</div>
+
+<div class="card inforight">
+<p>Perpetual Edition 35¢</p>
+<p>Published {{ site.time | date: date_format }}</p>
+</div>
+
+<div class="card personalintro">
+  <p><em>Welcome.</em> I am a third-year Computer Engineering student currently working as a <a href="https://ryanfleck.github.io">Co-Op Analyst-Developer at MNP LLP</a>. This site exists to showcase my experiments, alongside many objective and subjective musings. Browsing this site will reveal many useful tutorials, thought pieces, and articles on topics including <em>Programming</em>, <em>Professional Writing</em>, and <em>Philosophy</em>.</p>
+</div>
+
+<div class="card navigation">
+  <h2>Navigation</h2>
+  <ol>
+    <li><a href="{{ site.url }}/experiments">Experiments</a></li>
+    <li><a href="{{ site.url }}/discourse">Discourse</a></li>
+    <li><a href="{{ site.url }}/tutorials">Tutorials</a></li>
+    <li><a href="{{ site.url }}/archive">Archive</a></li>
+</div>
+
+<div class="card links">
+  <h2>Links One</h2>
+</div>
+
+
+{%- for post in site.posts -%}
+<div class="card news">
+  <h2><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+  <span class="post-meta">{{ post.date | date: date_format }}</span>
+  {{ post.excerpt }}
+  <a class="readmore" href="{{ post.url | relative_url }}"><i>...read more.</i></a>
+</div>
+{%- endfor -%}
+
+
+
+<div class="card links">
+  <h2>Links Two</h2>
+</div>
+
+<div class="card links">
+  <h2>Links Three</h2>
+</div>
+
+<div class="card site-info">
+  <h2>Site Info</h2>
+</div>

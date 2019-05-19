@@ -1,0 +1,71 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+  <div class="header-box">
+  </div>
+  </div>
+  
+  <div class="wrapper">
+    <h2 class="footer-heading"><a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></h2>
+
+    <div class="footer-col-wrapper">
+
+
+      <div class="footer-col footer-col-1">
+        <!--p style="font-size: 18px; text-align: left; margin:0;"><a href="{{ "/" | relative_url }}">RCF LAB</a></p-->
+        <div style="width:210px; padding: 7px 1px; border-radius:5px; border:1px solid #CCC;">
+        <a href="https://stackoverflow.com/users/9899022/r-fleck">
+        <img  style="image-rendering: pixelated;" src="https://stackoverflow.com/users/flair/9899022.png?theme=clean" width="208" height="58" alt="profile for R. Fleck at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for R. Fleck at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+        </a>
+        </div>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        {%- include social.html -%}
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{- site.footermessage | escape -}}<b> <a href="{{ site.url }}/ip">19Ω</a></b></p>
+
+      </div>
+
+
+    </div>
+
+    <!--form class="cf-block" action="https://formspree.io/ryan.fleck@protonmail.com" method="POST">
+
+      Get in touch:<br>
+
+      <input class="contact-form cf-text" 
+             type="text" 
+             placeholder="Name"
+             name="name"
+             >
+
+      <br>
+    
+      <input class="contact-form cf-email" 
+             type="email" 
+             placeholder="Email"
+             name="_replyto"
+             >
+
+      <br>
+    
+      <textarea class="contact-form cf-message" 
+                name="message" 
+                placeholder="Test Message"
+                ></textarea>
+    
+     <br>
+
+     <input class="contact-form cf-submit" 
+            type="submit" 
+            value="Send">
+    
+    </form--> 
+
+  </div>
+
+</footer>

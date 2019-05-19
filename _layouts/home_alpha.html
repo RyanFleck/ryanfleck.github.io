@@ -1,0 +1,25 @@
+---
+layout: default_alpha
+---
+
+<div class="home">
+
+  {{ content }}
+  <br />
+  <h1 class="page-heading">[ALPHA] Featured Articles</h1>
+  <ul class="post-list">
+    {%- for post in site.categories.featured limit:8 -%}
+      <li>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {{ post.excerpt }}
+      </li>
+    {%- endfor -%}
+  </ul>
+
+<p style="text-align:right;"><a  href="{{ site.url }}/archive"><i>Archived Articles</i></a></p>
+
+</div>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cube Field</title>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="js/three.min.js"></script>
+        <script type="text/javascript" src="js/cubefield.js"></script>
+        <style>
+            #rcf039{
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background: radial-gradient(rgb(109, 0, 181),black);
+                z-index: 10;
+            }
+            #statusbox{
+                position: absolute;
+                left: 0px;
+                color: white;
+                font-size:15px;
+                top: 0px;
+                overflow: hidden;
+                z-index: 20;
+                padding-left: 0.5vh;
+            }
+            #inputplane{
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                z-index: 90;
+                background: radial-gradient(rgba(153, 0, 255, 0.171),rgba(0, 0, 0, 0.329));
+            }
+
+        </style>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112467225-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-112467225-1');
+        </script>
+
+
+    </head>
+    <body>
+        <div id="inputplane">
+        </div>
+        <div id="rcf039">
+        </div>
+        <div id="statusbox">
+<pre id="title">
+Running rcf039 three.js experiment: CUBEFIELD
+</pre>
+<pre id="status">
+Testing disabled
+</pre>
+<pre id="mousecoords">
+Testing coords
+</pre>
+<pre id="mousedelta">
+Testing delta
+</pre>
+
+<pre id="keydata">
+Key Data
+</pre>
+
+<pre id="gyrodata">
+Testing gyro
+</pre>
+
+</div>
+</body>
+</html>

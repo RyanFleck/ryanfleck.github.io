@@ -1,0 +1,38 @@
+---
+layout: content
+---
+<article id="postcontent" class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+  <h6 style="text-align: center;margin: 0; padding: 0; color: #CCC;">Course Notes</h6>
+    <h1 style="text-align: center; font-weight:700; margin: 0; padding: 0;" itemprop="name headline">{{ page.title | upcase | escape }}</h1>
+  <h4 style="text-align: center;margin: 0; padding: 0;">{{ page.course-title }}</h4>
+  <br />
+<p style="text-align: center; color:#CCC;">-  Ω  -</p>
+  <br />
+  </header>
+
+    <br />
+
+    <div style="padding: 1em; color: white; background: black;border-radius: 5px;/*! font-size: 1; *//*! font-size: 1.1rem; */">
+      <h3 style="color: white;">Experimental Failure</h3>
+      <p>Regrettably, I could not keep up (as those around me warned) with the task of copying summaries of every lecture I attended, complete with MathJax and diagrams, into markdown files.</p>
+      <p>While it lasted, it was a fantastic way to review and reinforce my learning. I'll leave these {{ page.title | upcase | escape }} course notes up, but they will now be accessible via the archives.</p>
+      <p>I would absolutely attempt this again, but perhaps on a weekly basis.</p>
+    </div>
+
+    <br />
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+<br />
+
+<br />
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; border-radius:0px;" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
+

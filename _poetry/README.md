@@ -1,0 +1,1 @@
+Majority of poetry redacted.

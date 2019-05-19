@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+  <div class="corners">
+
+   <!--style="background-image: url({{ site.url }}/assets/cubes.gif); background-size:cover;"-->
+    <div class="tc tc-container" >
+
+    <div class="tc tc-transparency-one"></div>
+    <div class="tc tc-transparency-two"></div>
+    <div class="tc tc-transparency-electronics"></div>
+
+    <div class="tc tc-textbox-container">
+    <div class="tc-textbox">
+        <h1 class="ryan tc-crunch">Ryan Fleck</h1>
+        <h3 id="codemode" class="tc-sub tc-crunch">Computer Programmer<span id="curs">|</span></h3>
+        <!--hr /-->
+        <br />
+        <ul class="tc-ul">
+        <li><a class="tc-link tc-crunch" href="{{ site.url }}/about">About Me & Contact</a></li>
+        <li><a class="tc-link tc-crunch" href="{{ site.resume_link }}">Resume <span style="font-family: sans-serif !important;">&#10515;</span></a></li>
+
+        </ul>
+        <br/>
+        <h4 class="tc-crunch" id="tblog">Technical Blog</h4>
+        <ul class="tc-ul">
+        {%- assign default_paths = site.pages | map: "path" -%}
+        {%- assign page_paths = site.header_pages | default: default_paths -%}
+        {%- for path in page_paths  -%}
+        {%- assign my_page = site.pages | where: "path", path | first  -%}
+        {%- if my_page.title  -%}
+        <li><a class="tc-link tc-crunch" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+        {%- endif  -%}
+        {%- endfor  -%}
+        </ul>
+        <br />
+        <p id="homepage-arrow" class="tc-crunch arrow"><a class="homescroll" href="#featured"><span style="font-family: sans-serif !important;">&#9660;</span></a></p>
+    </div>
+    </div>
+
+    </div>
+
+    <main id="page-content" class="page-content" aria-label="Content">
+      <div class="wrapper">
+      <div class="home-main">
+
+      {{ content }}
+
+      </div>
+      </div>
+    </main>
+
+
+
+    {%- include footer.html -%}
+
+    </div>
+   {%- include copyright.html -%}
+  </body>
+
+  {%- include footer-scripts.html -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+    <!--
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          xfbml: true,
+          version: 'v3.2'
+        });
+      };
+
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <div class="fb-customerchat" attribution=setup_tool page_id="354371138754449" theme_color="#000000"
+      logged_in_greeting="Welcome! Can I help you with anything?" logged_out_greeting="Welcome! Can I help you with anything?">
+    </div>
+    Your customer chat code 89a0e1 -->
+  {%- endif -%}
+  {%- include foot.html -%}
+</html>

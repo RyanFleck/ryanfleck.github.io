@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="discourse">
+
+    {% include pretty-header.html %} 
+    
+    <br />
+    <h1 class="page-heading">Recent Papers</h1>
+    <ul class="post-list">
+      {%- for post in site.categories.discourse limit:3 -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <!--span class="post-meta">{{ post.date | date: date_format }}</span-->
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    {{ content }}
+
+    <h2 class="post-list-heading">Archive</h2>
+    <ol>
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {% for post in site.categories.discourse %}
+        {% if post.url %}
+            <li><a href="{{ post.url }}">{{ post.date | date: date_format }}: <b>{{ post.title }}</b></a></li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+
+
+</div>

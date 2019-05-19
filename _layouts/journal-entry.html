@@ -1,0 +1,15 @@
+---
+layout: private 
+---
+
+  <header class="post-header">
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = "%Y%m%d" -%}
+        Written on {{ page.date | date: date_format }}
+      </time>
+  </header>
+
+  {{ content }}
+
+  <br />

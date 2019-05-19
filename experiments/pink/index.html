@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://ryanfleck.github.io/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  <style media="screen">
+    @-moz-document url-prefix() {
+      html { background:white; opacity: 0; }
+    }
+
+    html{
+      scroll-behavior: smooth;
+      padding: 0;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 400;
+    }
+
+    svg.svg-icon{
+      width: 16 !important;
+      height: 16 !important;
+    }
+
+    nav{
+      display: none;
+    }
+
+    .wrapper{
+      max-width:700px;
+      margin: 0 auto;
+    }
+
+    .tc-textbox{
+      margin: 1em auto;
+      text-align: center;
+
+    }
+
+    footer{
+      display: none;
+    }
+
+    .tc-ul {
+      list-style: none;
+    }
+      
+    .print-only{
+      display: none;
+    }
+    img{
+        max-width: 100%; 
+        display: block;
+      }
+
+
+  </style>
+
+  <style media="print">
+    * {
+     font-family: monospace;
+      color: black;
+    }
+    p {
+      font-family: monospace;
+      font-size: 14px;
+      color: black;
+    }
+    html{
+      font-family: monospace;
+      font-size: 14px;
+      color: black;
+    }
+    footer{
+      display: none;
+    }
+    .site-header{
+      display: none;
+    }
+    .tc{
+      display: none;
+    }
+    .center-image {
+        margin: 5px auto;
+        display: block;
+        max-width: 740px;
+     }
+     img{
+        max-width: 740px; 
+        display: block;
+      }
+    .print-only{
+      display: block;
+    }
+    .copyright{
+        display: none;
+    }
+  </style>
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color" content="#FFF">
+<meta name="theme-color" content="#FFF">
+<meta name="msapplication-TileColor" content="#FFF">
+<meta name="msapplication-navbutton-color" content="#FFF">
+<meta name="apple-mobile-web-app-status-bar-style" content="#FFF">
+
+  <link rel="stylesheet" media="screen" href="./RCF.LAB _ Technical Blog_files/main.css"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>RCF.LAB | Technical Blog</title>
+<meta name="generator" content="Jekyll v3.7.4">
+<meta property="og:title" content="RCF.LAB">
+<meta name="author" content="Ryan Fleck">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Technical Blog">
+<meta property="og:description" content="Technical Blog">
+<link rel="canonical" href="https://ryanfleck.github.io/">
+<meta property="og:url" content="https://ryanfleck.github.io/">
+<meta property="og:site_name" content="RCF.LAB">
+<script type="application/ld+json">
+{"@type":"WebSite","headline":"RCF.LAB","url":"https://ryanfleck.github.io/","name":"RCF.LAB","author":{"@type":"Person","name":"Ryan Fleck"},"description":"Technical Blog","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://ryanfleck.github.io/feed.xml" title="RCF.LAB"><link rel="manifest" href="https://ryanfleck.github.io/assets/manifest.webmanifest">
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+  <div class="corners">
+
+   <!--style="background-image: url(https://ryanfleck.github.io/assets/cubes.gif); background-size:cover;"-->
+    <div class="tc tc-container">
+
+    <div class="tc tc-transparency-one"></div>
+    <div class="tc tc-transparency-two"></div>
+    <div class="tc tc-transparency-electronics"></div>
+
+    <div class="tc tc-textbox-container">
+    <div class="tc-textbox">
+        <h1 class="ryan tc-crunch">Ryan Fleck</h1>
+        <h3 id="codemode" class="tc-sub tc-crunch">Computer Programmer<span id="curs">|</span></h3>
+        <!--hr /-->
+        <br>
+        <ul class="tc-ul">
+        <li><a class="tc-link tc-crunch" href="https://ryanfleck.github.io/about">About Me &amp; Contact</a></li>
+        <li><a class="tc-link tc-crunch" href="https://github.com/RyanFleck/Projects/raw/master/tex/Resume/RCF_CV_W19.pdf">Resume <span style="font-family: sans-serif !important;">⤓</span></a></li>
+
+        </ul>
+        <br>
+        <h4 class="tc-crunch" id="tblog">Technical Blog</h4>
+        <ul class="tc-ul"><li><a class="tc-link tc-crunch" href="https://ryanfleck.github.io/tutorials/">Tutorials &amp; Notes</a></li><li><a class="tc-link tc-crunch" href="https://ryanfleck.github.io/experiments/">Experiments</a></li><li><a class="tc-link tc-crunch" href="https://ryanfleck.github.io/discourse/">Discourse</a></li><li><a class="tc-link tc-crunch" href="https://ryanfleck.github.io/archive/">Archive</a></li></ul>
+        <br>
+        <p id="homepage-arrow" class="tc-crunch arrow"><a class="homescroll" href="https://ryanfleck.github.io/#featured"><span style="font-family: sans-serif !important;">▼</span></a></p>
+    </div>
+    </div>
+
+    </div>
+
+    <main id="page-content" class="page-content" aria-label="Content">
+      <div class="wrapper">
+      <div class="home-main">
+
+      <div class="home">
+  <div style="height:10px"></div>
+  <div class="home-intro">
+    <p>You’ve stumbled upon my personal site. <em>Welcome!</em></p>
+
+<p>If you are looking to hire an articulate programming generalist with a penchant for quality, please <a href="https://ryanfleck.github.io/about">get in touch</a>.</p>
+
+<p>This site stores <a href="https://ryanfleck.github.io/programming-manuals">technical documents</a>, <a href="https://ryanfleck.github.io/tutorials">tutorials</a>, <a href="https://ryanfleck.github.io/experiments">notes</a> taken during experiments, quick-start guides for my favourite programs, and anecdotes, all written mostly for myself or those I collaborate with.</p>
+
+<p><br></p>
+
+<p>Feel free to send me an email if you have any questions.</p>
+
+<p><strong>R</strong></p>
+
+<p><br></p>
+
+<p><br></p>
+
+  </div>
+  <h1 id="featured" class="page-heading">Featured Articles</h1>
+  <ul class="post-list"><li><span class="post-meta">20180721 0312h - 1380w</span>
+        <h3>
+          <a class="post-link" href="https://ryanfleck.github.io/20180721/xalgorithm-development-on-fedora">
+            Xalgorithms Development on GNU/Linux
+          </a>
+        </h3>
+        <p>The <a href="https://www.xalgorithms.org/">Xalgorithms</a> platform has been designed to support the collaborative maintainance of a global body of rules for trade, commerce and taxes. A rule specification, compute method and authoring tools have been designed to enable organizations to use and manage this external body of shared algorithms.</p>
+
+
+      </li><li><span class="post-meta">20180707 1320h - 473w</span>
+        <h3>
+          <a class="post-link" href="https://ryanfleck.github.io/20180707/Calligraphy">
+            Calligraphy with Inkscape
+          </a>
+        </h3>
+        <p>With the goal of replacing my questionably-proprietary <strong>R</strong>, I decided to scrawl a fresh svg in InkScape. After an embarrassing number of revisions and rework, gravitating further away then back towards the original design, here is the final product.</p>
+
+
+      </li><li><span class="post-meta">20180624 0018h - 1751w</span>
+        <h3>
+          <a class="post-link" href="https://ryanfleck.github.io/20180624/wmr-june-2018">
+            Windows Mixed Reality
+          </a>
+        </h3>
+        <p>As the Virtual Reality scene continues to improve, the aging first-gen conceptual headsets are becoming less expensive. The HTC Vive initially retailed at CAD $1200, and now sells for $700, whereas the Oculus Rift dropped from $800 for the standalone headset to $530 including motion controllers. <em>Windows Mixed Reality</em> headsets are the consumer offspring of all the R&amp;D that occurred for the HoloLens, namely inside-out tracking, and positioned themselves as the budget alternative to these premium headsets. I purchased a <em>Lenovo Explorer</em> on sale for $300, less than half the cost of either premium HMD; these are my thoughts on the headset and platform.</p>
+
+
+      </li><li><span class="post-meta">20180428 0113h - 2053w</span>
+        <h3>
+          <a class="post-link" href="https://ryanfleck.github.io/20180428/WorkTermOne">
+            Hard Knocks
+          </a>
+        </h3>
+        <p>My last 4 months were spent with <a href="http://www.mnp.ca/en">MNP LLP</a>, a financial firm and technology consultancy. I’ve learned a great deal from playing a small but essential role on the Digital Integration team. Becoming close with team members, coordinating development efforts, and discovering the strengths and weaknesses of my coworkers (along with my own,) has been a particularly rewarding experience. All this was not earned without hard work; I’ve made a great deal of mistakes, stepped on a few toes, and bumbled aplenty. The following article summarizes my growth at MNP, the mistakes I’ve made, and the life lessons learned from making them.</p>
+
+
+      </li><li><span class="post-meta">20180330 0916h - 2702w</span>
+        <h3>
+          <a class="post-link" href="https://ryanfleck.github.io/jekyll/">
+            Build a Personal Website in an Afternoon
+          </a>
+        </h3>
+        <p>If you’ve ever wanted a personal website; a place to showcase your experiments and opinions, away from pre-configured themes and terribly named domain postfixes, <a href="https://jekyllrb.com/"><em>Jekyll</em></a>, <a href="https://kramdown.gettalong.org/"><em>Kramdown</em></a>, <a href="https://sass-lang.com/"><em>SASS</em></a>, and <a href="https://pages.github.com/"><em>Github Pages</em></a> may be just the tools for you. The following post will present, in a thoughtful and concise manner, the material needed to get a website up and running at <em>yourname.github.io</em>.</p>
+
+
+      </li><li><span class="post-meta">20171229 1211h - 648w</span>
+        <h3>
+          <a class="post-link" href="https://ryanfleck.github.io/20171229/VimForJITs">
+            VIM For The Just-In-Time Crowd
+          </a>
+        </h3>
+        <p>VIM is the best programming tool, full stop. This short guide will take the average JIT<sup id="fnref:1"><a href="https://ryanfleck.github.io/#fn:1" class="footnote">1</a></sup> student from <em>“why would I use this silly terminal thing”</em> to <strong>“ohmygod where has this amazing tool been all my life?”</strong> in 5 minutes, plus an hour or so of experimentation and adapting to the keybindings.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><strong>JIT:</strong> <em>Just In Time</em>, an idea applied to many fields, applicable here in reference to <em>just in time compiling</em>, where a program is compiled at run time during program execution.&nbsp;<a href="https://ryanfleck.github.io/#fnref:1" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
+
+      </li></ul>
+
+<p style="text-align:right;"><a href="https://ryanfleck.github.io/archive"><i>Archived Articles</i></a></p>
+
+</div>
+
+
+      </div>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+  <div class="header-box">
+  </div>
+  </div>
+  
+  <div class="wrapper">
+    <h2 class="footer-heading"><a href="https://ryanfleck.github.io/">RCF.LAB</a></h2>
+
+    <div class="footer-col-wrapper">
+
+
+      <div class="footer-col footer-col-1">
+        <!--p style="font-size: 18px; text-align: left; margin:0;"><a href="/">RCF LAB</a></p-->
+        <div style="width:210px; padding: 7px 1px; border-radius:5px; border:1px solid #CCC;">
+        <a href="https://stackoverflow.com/users/9899022/r-fleck">
+        <img style="image-rendering: pixelated;" src="./RCF.LAB _ Technical Blog_files/9899022.png" width="208" height="58" alt="profile for R. Fleck at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for R. Fleck at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+        </a>
+        </div>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/ryanfleck"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">ryanfleck</span></a></li><li><a href="https://www.linkedin.com/in/ryan-c-fleck"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">ryan-c-fleck</span></a></li><li><a href="https://mastodon.social/@rflec028"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#mastodon"></use></svg> <span class="username">rflec028</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This site is my personal knowledge store and technical blog. Hopefully it comes in handy.<b> <a href="https://ryanfleck.github.io/ip">19Ω</a></b></p>
+
+      </div>
+
+
+    </div>
+
+    <!--form class="cf-block" action="https://formspree.io/ryan.fleck@protonmail.com" method="POST">
+
+      Get in touch:<br>
+
+      <input class="contact-form cf-text" 
+             type="text" 
+             placeholder="Name"
+             name="name"
+             >
+
+      <br>
+    
+      <input class="contact-form cf-email" 
+             type="email" 
+             placeholder="Email"
+             name="_replyto"
+             >
+
+      <br>
+    
+      <textarea class="contact-form cf-message" 
+                name="message" 
+                placeholder="Test Message"
+                ></textarea>
+    
+     <br>
+
+     <input class="contact-form cf-submit" 
+            type="submit" 
+            value="Send">
+    
+    </form--> 
+
+  </div>
+
+</footer>
+</div><div class="copyright wrapper">Copyright ©2019 Ryan Fleck</div>
+
+
+<!--SHARETHIS-->
+<!--
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="//platform-api.sharethis.com/js/sharethis.js#property=5b36790607712f00113781b1&product=inline-share-buttons">console.log("ShareThis loaded.");</script>
+<script src="/js/sharethis.rcf.js"></script>
+<script src="/js/page.v47.rcf.js"></script>
+-->
+<script async="" src="./RCF.LAB _ Technical Blog_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-112467225-1');
+  console.log('[ debug ] spookinit.');
+</script>
+<!--
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          xfbml: true,
+          version: 'v3.2'
+        });
+      };
+
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <div class="fb-customerchat" attribution=setup_tool page_id="354371138754449" theme_color="#000000"
+      logged_in_greeting="Welcome! Can I help you with anything?" logged_out_greeting="Welcome! Can I help you with anything?">
+    </div>
+    Your customer chat code 89a0e1 -->
+<!-- Secondary Scripts and Styling -->
+
+
+<script type="text/javascript" async="" src="./RCF.LAB _ Technical Blog_files/page.v47.rcf.js.download"></script>
+
+<script type="text/javascript" async="" src="./RCF.LAB _ Technical Blog_files/MathJax.js.download"></script>
+
+<script type="text/javascript" async="">
+    console.log('[ debug ] scripts loaded.');
+</script>
+
+<!-- End of Scripts and Styling -->
+
+
+</body><!--PRINTING (Disabled.)
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js" integrity="sha384-CchuzHs077vGtfhGYl9Qtc7Vx64rXBXdIAZIPbItbNyWIRTdG0oYAqki3Ry13Yzu" crossorigin="anonymous"></script>
+<script src="https://ryanfleck.github.io/js/html2pdf.bundle.min.js"></script>
+<script src="/js/printing.rcf.js"></script>
+--></html>

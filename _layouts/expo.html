@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="expo">
+    
+    {% include pretty-header.html %} 
+    
+    <br />
+    <h1 class="page-heading">Latest</h1>
+    <ul class="post-list">
+      {%- for post in site.categories.experiment limit:3 -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }} - {{ post.content | number_of_words }}w</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    {{ content }}
+
+
+
+</div>

@@ -1,0 +1,34 @@
+<div class = "sharethis-container">
+<!--FACEBOOK-->
+<div 
+  data-network="facebook"
+  class="rcf-sharethis st-custom-button">
+  <svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#facebook"></use></svg></div>  
+
+
+<!--TWITTER-->
+<div 
+  data-network="twitter"
+  data-title="{{page.title}}: {{ page.excerpt | strip_html | strip }}"
+  class="rcf-sharethis st-custom-button">
+  <svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></div>  
+
+
+<!--LINKEDIN-->
+<div 
+  data-network="linkedin" 
+  class="rcf-sharethis st-custom-button">
+  <svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg></div> 
+
+
+<!--EMAIL-->
+<div 
+  data-network="email"
+  data-message="{{ page.title }}
+  
+{{ page.excerpt | strip_html | strip }}
+
+Read more at {{ site.url }}{{ page.url }}"
+  class="rcf-sharethis st-custom-button">
+  <svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#email"></use></svg></div>
+</div>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {%- include news_head.html -%}
+  <body>
+    <main class="page-content" aria-label="Content">
+      <div class="rcf-grid">
+        {{ content }}
+      </div>
+    </main>
+  </body>
+
+{%- include rcfjs.html -%}
+{%- if jekyll.environment == 'production' and site.google_analytics -%}
+  {%- include google-analytics.html -%}
+{%- endif -%}
+</html>

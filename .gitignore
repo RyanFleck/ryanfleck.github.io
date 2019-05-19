@@ -1,12 +1,22 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-
-# Test binary, build with `go test -c`
-*.test
-
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+_site
+.sass-cache
+.jekyll-metadata
+*.lock
+*~
+.vs/*
+*.swp
+*.bak
+*.un~
+*-checkpoint.py
+/*.egg-info
+/.spyderproject
+.spyderproject
+.idea/*
+/**/__pycache__
+/**/.ipynb_checkpoints
+/.doit.db.bak
+/.doit.db.dat
+/.doit.db.dir
+secrets.py
+*.kate-swp
+.vscode/settings.json

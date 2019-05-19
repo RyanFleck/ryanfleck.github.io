@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>RCF-LAB G02</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" charset="utf-8">
+        function pageLoaded(){
+            var canvas = document.getElementById("testcanvas");
+            var context = canvas.getContext("2d");
+            
+            //Drawing orders:
+            //context.fillRect(50,70,90,30);
+            
+            //R LOGO:
+            function drawR(ilx,ily,is){
+            //Scaling and position:
+            var lx = ilx;
+            var ly = ily;
+            var a = is;
+            var b = is;
+            //DRAW THE R:
+            context.beginPath();
+            context.moveTo(lx,ly);
+            context.lineTo((lx+a*20),(ly+b*0));
+            context.lineTo((lx+a*25),(ly+b*10));
+            context.lineTo((lx+a*20),(ly+b*20));
+            context.lineTo((lx+a*25),(ly+b*30));
+            context.lineTo((lx+a*12),(ly+b*30));
+            context.lineTo((lx+a*10),(ly+b*26));
+            context.lineTo((lx+a*10),(ly+b*30));
+            context.lineTo((lx+a*0),(ly+b*30));
+            //context.moveTo((lx+0),(ly+0));
+            context.fill();
+            
+            //Figure number:
+            context.fillText("Figure 1: Test 'R'",(lx+a*5),(ly+b*35));
+            }
+            
+            drawR(10,10,4);
+            
+            context.fillStyle = "rgba(255,0,0,0.5)";
+            drawR(10,210,4);
+            context.fillStyle = "rgba(0,255,0,0.5)";
+            drawR(20,210,4);
+            context.fillStyle = "rgba(0,0,255,0.5)";
+            drawR(30,210,4);
+            context.fillStyle = "rgba(0,0,0,1)";
+
+
+            context.fillStyle = "rgba(0,255,0,0.6)";
+            drawR(210,210,6);
+            context.fillStyle = "rgba(255,0,0,0.6)";
+            drawR(225,210,6);
+            context.fillStyle = "rgba(0,0,255,0.6)";
+            drawR(240,210,6);
+            context.fillStyle = "rgba(0,0,0,1)";
+            
+            //Circle thing:
+            var ctx = 200;
+            var cty = 70;
+            context.beginPath(); 
+            context.arc(ctx,cty,30,0,3/2*Math.PI,false);
+            context.arc(ctx,cty,20,3/2*Math.PI,0,false);
+            context.arc(ctx,cty,10,0,3/2*Math.PI,false);
+            context.lineTo(ctx,cty);
+            context.stroke();
+            context.fillText("Figure 2: Circle art.",(ctx-30),(cty+50));
+            
+            
+            //R LOGO:
+            function drawRv2(ilx,ily,is){
+            //Scaling and position:
+            var lx = ilx;
+            var ly = ily;
+            var a = is;
+            var b = is;
+            //DRAW THE R:
+            context.beginPath();
+            context.moveTo(lx,ly);
+            context.lineTo((lx+a*20),(ly+b*0));
+            context.lineTo((lx+a*25),(ly+b*10));
+            context.lineTo((lx+a*20),(ly+b*20));
+            context.lineTo((lx+a*25),(ly+b*30));
+            context.lineTo((lx+a*12),(ly+b*30));
+            context.lineTo((lx+a*10),(ly+b*26));
+            context.lineTo((lx+a*10),(ly+b*30));
+            context.lineTo((lx+a*0),(ly+b*30));
+            //context.moveTo((lx+0),(ly+0));
+            context.fill();
+            context.fillStyle = "rgba(0,0,0,1)";
+            }
+            
+            context.fillStyle = "rgba(100,0,100,0.5)";
+            drawRv2(300,20,3);
+            context.fillStyle = "rgba(100,0,100,1)";
+            drawRv2(305,25,3);
+            
+            
+            
+            //ANIMATION TEST:
+            function animationLoop(){
+                //Iterate through all items in the game
+                //Move them:
+            }
+            function drawingLoop(){
+                //Clear the canvas
+            }
+    
+    
+        }
+        </script>
+    
+    
+    
+    </head>
+    <body onload="pageLoaded();">
+        <center>
+        <p>RCF - WEB GRAPHICS TEST 02</p>
+        
+        <canvas width="640" height="480" id="testcanvas" style="border:white 1px solid;">
+            Upgrade your browser for HTML5 support.
+        </canvas>        
+        </center>
+        
+    
+    </body>
+</html>
