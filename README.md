@@ -2,6 +2,8 @@
 
 The source and content of my personal technical blog. As part of the transition to a public repository, I've removed all of my personal journal entries, scripts, tools, notes, and games. I'll release useful things after considering if they're worth releasing. At the end of it's active life, this site's original repository logged ~4000 commits.
 
+I'll certainly keep a lot of the tricks I used here. All places that link my resume pull the URL from the config, which points to the raw file download of my latest *LaTeX*-generated resume. Using cinematics behind titles, while a bit distracting, I find very visually appealing. Integrating MathJax was hit and miss, as I didn't use it often. Other things, I won't miss; the manual pages, main site, and some specialty pages all had evolving themes over the past two years, and I'll be glad to have more depthful control over my next theme-from-scratch on the *Hugo* engine.
+
 <br />
 
 <br />
