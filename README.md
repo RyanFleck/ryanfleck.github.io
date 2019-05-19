@@ -1,6 +1,10 @@
 # RyanFleck.Github.IO
 
-The source and content of my personal technical blog. As part of the transition to a public repository, I've removed all of my personal journal entries, scripts, tools, notes, and games. I'll release useful things after considering if they're worth releasing.
+The source and content of my personal technical blog. As part of the transition to a public repository, I've removed all of my personal journal entries, scripts, tools, notes, and games. I'll release useful things after considering if they're worth releasing. At the end of it's active life, this site's original repository logged ~4000 commits.
+
+<br />
+
+<br />
 
 
 ### Jekyll Notes
