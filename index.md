@@ -14,6 +14,8 @@ If you are looking to hire an articulate programming generalist with a penchant 
 
 This site stores [technical documents](/programming-manuals), [tutorials](/tutorials), [notes](/experiments) taken during experiments, quick-start guides for my favourite programs, and anecdotes, all written mostly for myself or those I collaborate with.
 
+Currently, I'm working hard on a new amalgamated personal site at [ryanfleck.ca](https://www.ryanfleck.ca/), potentially using my new [BootStrap](https://hugo-bootstrap.netlify.com/) theme. Soon, all new content will be posted there rather than here.
+
 <br />
 
 Feel free to send me an email if you have any questions.
