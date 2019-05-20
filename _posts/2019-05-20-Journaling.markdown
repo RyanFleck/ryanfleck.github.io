@@ -5,7 +5,7 @@ date: 2019-05-20 06:19:13
 categories: discourse featured post
 ---
 
-Perhaps the most valuabe thing I've done for myself in recent months: beginning to write daily, about my life and my thoughts, in a critical and introspective way. This post is about the tools I have developed to make journaling quick and accessible from any machine.
+Perhaps the most valuable thing I've done for myself in recent months: beginning to write daily, about my life and my thoughts, in a critical and introspective way. This post is about the tools I have developed to make journaling quick and accessible from any machine.
 
 ![Image.]({{ site.url }}/assets/howIJournal/journal-entry.png){: .center-image }
 
