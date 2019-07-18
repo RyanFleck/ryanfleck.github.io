@@ -8,19 +8,24 @@
 layout: home
 ---
 
+<span id="intro-paragraph"></span>
+
 You've stumbled upon my personal site. *Welcome!*
 
 If you are looking to hire an articulate programming generalist with a penchant for quality, please [get in touch](/about).
 
-This site stores [technical documents](/manuals), [tutorials](/tutorials), [notes](/experiments) taken during experiments, quick-start guides for my favourite programs, and anecdotes, all written mostly for myself or those I collaborate with.
+This site stores:
 
-Currently, I'm working hard on a new amalgamated personal site at [ryanfleck.ca](https://www.ryanfleck.ca/), potentially using my new [BootStrap](https://hugo-bootstrap.netlify.com/) theme. Soon, all new content will be posted there rather than here.
+- Short [tutorials and guides](/tutorials) for programs, libraries, and tools
+- Notes taken during [experiments](/experiments)
+- My thoughts on [various topics](/discourse)
+- [Notes](/manuals) on programming languages
 
 <br />
 
-Feel free to send me an email if you have any questions.
+Feel free to send me an email if you have any questions, or would like to suggest a revision or improvement.
 
-**R**
+**RCF**
 
 <br />
 
