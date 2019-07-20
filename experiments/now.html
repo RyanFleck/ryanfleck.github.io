@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang=en>
     <head>
-        <title>RCF NOW</title>
+        <title>Now</title>
         <meta charset="UTF-8">
         <meta name=viewport content="width=device-width,initial-scale=1,
 shrink-to-fit=no">
@@ -9,6 +9,9 @@ shrink-to-fit=no">
             html{scroll-behavior:smooth;overflow-y:scroll;overflow-x:hidden;-webkit-font-smoothing:antialiased!important;-moz-osx-font-smoothing:auto!important;font-size:17px;max-width:100%;color:rgba(0,0,0,.8);overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;hyphens:auto;font-family:sfmono-regular,Consolas,liberation mono,Menlo,Courier,monospace}body{margin:0 auto;max-width:62ch;padding:1ch}a{text-decoration:none;color:#5353dd}::selection{background:rgba(255,255,44,.76)}::-moz-selection{background:rgba(255,255,44,.76)}@media only screen and (max-width:600px){html{font-size:15px}}@media only screen and (max-width:400px){html{font-size:13px}}@media only screen and (max-width:300px){html{font-size:10px}}h1,h2,h3,h4,h5,h6{padding-top:2rem;font-size:1rem}code,pre,.highlight{font-family:sfmono-regular,Consolas,liberation mono,Menlo,Courier,monospace;background-color:transparent!important;color:#000}article>div.highlight,article>pre{overflow-x:auto;margin-right:calc(-50vw + 51%);padding:0}div.highlight>pre{margin:0}hr{border-style:dashed}blockquote{margin-left:2ch}footer{color:rgba(0,0,0,.2);font-size:.8rem}
             </style>
             <script>
+
+                var months = ['January', 'February', 'March', 'April', 'May', 'June','July','August','September','October','November','December'];
+                var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
                 /*
                  * This section of the scripts contains functions related to the
@@ -48,7 +51,33 @@ shrink-to-fit=no">
                 }
                 
                 function setFullDate(){
-                    document.getElementById("full").innerHTML = new Date().toLocaleTimeString('en-us', {  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+                    document.getElementById("full").innerHTML = getFullDate(new Date());
+                }
+
+                function getFullDate( dateobj ){
+                    return dateobj.toLocaleTimeString('en-us', {  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+                }
+
+                function setWeekSpan(){
+                    var today = new Date();
+                    today.setHours(0);
+                    today.setMinutes(0);
+                    today.setSeconds(0);
+                   
+                   var start = new Date(today - today.getDay()*1000*60*60*24);
+                    var end = new Date(today);
+                    end.setHours(24*(6-today.getDay()));
+                    
+                    document.getElementById("weekstart").innerHTML = months[start.getMonth()] + " " + start.getUTCDate(); 
+
+                    if( start.getMonth() == end.getMonth() ){
+                        // Do not give month if end is in same month as start.
+                        document.getElementById("weekend").innerHTML = end.getUTCDate(); 
+                    }else{
+                        document.getElementById("weekend").innerHTML = months[end.getMonth()] + " " + end.getUTCDate(); 
+                    }
+
+                
                 }
 
                 function update(){
@@ -56,6 +85,7 @@ shrink-to-fit=no">
                     setWeek();
                     setDaysIntoYear();
                     setFullDate();
+                    setWeekSpan();
                 }
 
                 /*
@@ -85,8 +115,10 @@ shrink-to-fit=no">
     </head>
     <body>
     <h1>Now</h1>
+    <p>Time is precious, spend it with care.</p>
     <p>Time of Day: <span id="time"></span></p>
     <p>Week of Year: <span id="week"></span></p>
+    <p>Week spans <span id="weekstart"></span> to <span id="weekend"></span></p>
     <p>Days into Year: <span id="doy"></span></p>
     <p>Full Date: <span id="full"></span></p>
     </body>
