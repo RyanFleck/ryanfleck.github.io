@@ -21,10 +21,44 @@
                     return str;
                 }
 
-                function update(){
+                function updateClock(){
                     var now = new Date();
                     document.getElementById("time").innerHTML = pad(now.getHours()) + ":" + pad(now.getMinutes()) + ":" + pad(now.getSeconds());
                 }
+
+                /* This section is related to the week */
+
+                function getDaysIntoYear( today ){
+                    var yearStart = new Date(new Date().getFullYear(), 0, 0);
+                    var dateDiff = (today - yearStart) + ((yearStart.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000 )
+                    var oneDay = 1000 * 60 * 60 * 24;
+                    return dateDiff / oneDay;
+                }
+
+                function setDaysIntoYear(){
+                    document.getElementById("doy").innerHTML = getDaysIntoYear(new Date());
+                }
+
+                function setWeek(){
+                    var start = new Date(new Date().getFullYear(), 0, 0);
+                    var daysSinceWeekOneStart = getDaysIntoYear(new Date()) + start.getDay();
+                    document.getElementById("week").innerHTML = Math.ceil(daysSinceWeekOneStart/7);
+                }
+                
+                function setFullDate(){
+                    document.getElementById("full").innerHTML = new Date().toLocaleTimeString('en-us', {  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+                }
+
+                function update(){
+                    updateClock();
+                    setWeek();
+                    setDaysIntoYear();
+                    setFullDate();
+                }
+
+                /*
+                 * Main.
+                 */
 
                 window.addEventListener("load", function(){
                     var calibrate=0;
@@ -42,14 +76,17 @@
                     }
 
                     // Update once more, and set timer to update every second.
-                    update();
+                    updateClock();
                     setInterval(update, 1000);
                 });
             </script>
     </head>
     <body>
     <h1>Now</h1>
-    <p id="time"></p>
+    <p>Time of Day: <span id="time"></span></p>
+    <p>Week of Year: <span id="week"></span></p>
+    <p>Days into Year: <span id="doy"></span></p>
+    <p>Full Date: <span id="full"></span></p>
     </body>
 </html>
 
