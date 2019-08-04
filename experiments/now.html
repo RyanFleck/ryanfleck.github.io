@@ -91,7 +91,7 @@ shrink-to-fit=no">
                 }
 
                 function update(){
-                    updateClock();
+                    //updateClock();
                     updateRCFDate();
                     setWeek();
                     setDaysIntoYear();
@@ -119,22 +119,22 @@ shrink-to-fit=no">
                     }
 
                     // Update once more, and set timer to update every second.
-                    updateClock();
+                    update()
                     setInterval(update, 1000);
                 });
             </script>
     </head>
     <body>
     <p style="margin-bottom:1px; color:grey;">RCF-Timestamp:</p>
-    <p style="font-size:1.4rem;margin-top:1px;"><span id="rcf">0000-00-00 0000h</span></p>
+    <p style="font-size:1.8rem;margin-top:1px;"><span id="rcf">0000-00-00 0000h</span></p>
     <br>
     <p>Time is precious, spend it with care.</p>
     <hr style="color:grey;"/>
     <p>Week of Year: <span id="week">00</span></p>
-    <p>Time of Day: <span id="time">00:00:00</span></p>
     <p>Week spans <span id="weekstart">January 00</span> to <span id="weekend">00</span></p>
+    <p>Date: <span id="full">Sunday, January 0, 0000, 00:00:00 AM</span></p>
+    <!--p>Time of Day: <span id="time">00:00:00</span></p-->
     <p>Days into Year: <span id="doy">000.000000000</span></p>
-    <p>Full Date: <span id="full">Sunday, January 0, 0000, 00:00:00 AM</span></p>
     </body>
 </html>
 
