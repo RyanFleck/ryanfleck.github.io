@@ -80,8 +80,19 @@ shrink-to-fit=no">
                 
                 }
 
+                function updateRCFDate(){
+                    var now = new Date();
+                    var year = now.getFullYear();
+                    var month =pad(now.getMonth()+1);
+                    var day = pad(now.getDate());
+                    var hour = pad(now.getHours());
+                    var minute = pad(now.getMinutes());
+                    document.getElementById("rcf").innerHTML = year + "-" + month + "-" + day + " "+ hour + minute + "h";
+                }
+
                 function update(){
                     updateClock();
+                    updateRCFDate();
                     setWeek();
                     setDaysIntoYear();
                     setFullDate();
@@ -114,13 +125,16 @@ shrink-to-fit=no">
             </script>
     </head>
     <body>
-    <h1>Now</h1>
+    <p style="margin-bottom:1px; color:grey;">RCF-Timestamp:</p>
+    <p style="font-size:1.4rem;margin-top:1px;"><span id="rcf">0000-00-00 0000h</span></p>
+    <br>
     <p>Time is precious, spend it with care.</p>
-    <p>Time of Day: <span id="time"></span></p>
-    <p>Week of Year: <span id="week"></span></p>
-    <p>Week spans <span id="weekstart"></span> to <span id="weekend"></span></p>
-    <p>Days into Year: <span id="doy"></span></p>
-    <p>Full Date: <span id="full"></span></p>
+    <hr style="color:grey;"/>
+    <p>Week of Year: <span id="week">00</span></p>
+    <p>Time of Day: <span id="time">00:00:00</span></p>
+    <p>Week spans <span id="weekstart">January 00</span> to <span id="weekend">00</span></p>
+    <p>Days into Year: <span id="doy">000.000000000</span></p>
+    <p>Full Date: <span id="full">Sunday, January 0, 0000, 00:00:00 AM</span></p>
     </body>
 </html>
 
