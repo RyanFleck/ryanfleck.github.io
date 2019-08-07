@@ -10,7 +10,7 @@ layout: home
 
 <span id="intro-paragraph"></span>
 
-You've stumbled upon my personal site. *Welcome!*
+You've stumbled upon my (old) personal site. *Welcome!*
 
 If you are looking to hire an articulate programming generalist with a penchant for quality, please [get in touch](/about).
 
