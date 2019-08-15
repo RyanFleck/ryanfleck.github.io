@@ -99,13 +99,15 @@ shrink-to-fit=no">
                 }
 
                 function update(){
-                    //updateClock();
-                    tick();
-                    updateRCFDate();
-                    setWeek();
-                    setDaysIntoYear();
-                    setFullDate();
-                    setWeekSpan();
+                    if(!document.hidden){
+                        //updateClock();
+                        tick();
+                        updateRCFDate();
+                        setWeek();
+                        setDaysIntoYear();
+                        setFullDate();
+                        setWeekSpan();
+                    }
                 }
 
                 /*
