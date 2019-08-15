@@ -90,8 +90,17 @@ shrink-to-fit=no">
                     document.getElementById("rcf").innerHTML = year + "-" + month + "-" + day + " "+ hour + minute + "h";
                 }
 
+                function tick(){
+                    if( window.ticksound ){
+                        window.ticksound.play();
+                    }else{
+                        window.ticksound = new Audio('https://ryanfleck.github.io/assets/click.wav');
+                    }
+                }
+
                 function update(){
                     //updateClock();
+                    tick();
                     updateRCFDate();
                     setWeek();
                     setDaysIntoYear();
