@@ -99,9 +99,10 @@ shrink-to-fit=no">
                 }
 
                 function update(){
+                    // Only update if tab is visible.
                     if(!document.hidden){
                         //updateClock();
-                        tick();
+                        //tick();
                         updateRCFDate();
                         setWeek();
                         setDaysIntoYear();
