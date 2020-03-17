@@ -9,6 +9,8 @@ The [Xalgorithms](https://www.xalgorithms.org) platform has been designed to sup
 
 What follows is a short guide on how to set up the compiler and interpreter for prototype Xalgorithm Rules. Instructions for **Fedora 28** are provided, but a similar process could be followed on most GNU/Linux distributions or within the Windows Subsystem for Linux. Current interpreter builds (July 2018) use JSON representations of tables, rules, package information and documents. Refer to the [project documentation](https://github.com/xalgorithms/general-documentation) for more information about the working implementation.
 
+Additionally, a copy of this writeup has been modified for **Ubuntu Linux**, and can be read [here](https://github.com/Xalgorithms/general-documentation/blob/58778bde28cf0b02bf283dd57bd55ad1f32a6c0e/setup/ubuntu.md).
+
 Configuring these repositories will prepare all prerequisites for contributing to the project by improving the rule interpreter. 
 
 <h3>Table of Contents</h3>
